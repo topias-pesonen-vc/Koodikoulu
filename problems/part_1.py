@@ -1,5 +1,3 @@
-
-
 # https://dmoj.ca/problem/wc16c1j1 - A Spooky Season
 def spooky():
     n = int(input())
@@ -12,16 +10,13 @@ def spooky():
 # https://dmoj.ca/problem/wc15c2j1 - A New Hope
 def faraway():
     n = int(input())
-    
     far_string = " ".join(["far, "]*(n-1))
     far_string = far_string + "far"
 
     print(f"A long time ago in a galaxy {far_string} away...")
-
 #faraway()
 
 # https://dmoj.ca/problem/ccc13j1 - Next in Line
-
 def age_diff():
    f = int(input())
    s = int(input())
@@ -30,12 +25,18 @@ def age_diff():
 
    print(s + diff)
 
-age_diff()
-
-
-
+#age_diff()
 
 # https://dmoj.ca/problem/wc17c1j2 - How's the Weather?
+def freedom_temp():
+    C = int(input())
+
+    # C = 5 / 9 * (F - 32)
+    # F = (C * 9) / 5 + 32
+    F = (C * 9) / 5 + 32
+    print(int(F)) 
+
+freedom_temp()
 
 # https://dmoj.ca/problem/wc18c3j1 - An Honest Day's Work
 
