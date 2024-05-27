@@ -2,9 +2,9 @@
 
 Steps to get started.
 
-# Create an account at: https://dmoj.ca/
-# Create github account and fork the repo. Then clone it locally and push your changes to the master. We will go over your solutions in your own repo. If you need help with this hit me up.
-# Start with part 2.
+- Create an account at: https://dmoj.ca/
+- Create github account and fork the repo. Then clone it locally and push your changes to the master. We will go over your solutions in your own repo. If you need help with this hit me up.
+- Start with part 2.
 
 
 ## Part 1: Learning to code by solving problems.
