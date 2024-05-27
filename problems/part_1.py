@@ -36,9 +36,21 @@ def freedom_temp():
     F = (C * 9) / 5 + 32
     print(int(F)) 
 
-freedom_temp()
+#freedom_temp()
 
 # https://dmoj.ca/problem/wc18c3j1 - An Honest Day's Work
+def pokedollars():
+    P = int(input())
+    B = int(input())
+    D = int(input())
+
+    badges_crafted =  P // B
+    leftover_paint = P - badges_crafted * B
+
+    badge_profit = badges_crafted * D
+
+    print(badge_profit + leftover_paint)
+pokedollars()
 
 
 # https://dmoj.ca/problem/ccc06j1 - Canadian Calorie Counting
