@@ -1,6 +1,13 @@
 
 
 # https://dmoj.ca/problem/wc16c1j1 - A Spooky Season
+def spooky():
+    n = int(input())
+    spookers = n*"o"
+    print(f"sp{spookers}ky")
+
+spooky()
+
 
 # https://dmoj.ca/problem/wc15c2j1 - A New Hope
 
