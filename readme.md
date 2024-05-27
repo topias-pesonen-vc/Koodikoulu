@@ -6,6 +6,38 @@ Steps to get started.
 - Create github account and fork the repo. Then clone it locally and push your changes to the master. We will go over your solutions in your own repo. If you need help with this hit me up.
 - Start with part 2.
 
+## Format of answers:
+
+For each submission have one function with all the necessary logic.
+
+```python
+def spooky_season(inp=None):
+    if inp:
+        inputti = inp
+    else:
+        inputti = int(input())
+    print(f"sp{inputti * 'o'}ky")
+
+
+spooky_season(5)
+
+```
+With this you can just copy the solution to the dmoj website and call it with different test inputs on your local environment.
+When finished comment out the function call.
+
+### Catching input:
+
+for one line its just inputti = input()
+
+For 4 lines input.
+```python
+inputti = [input() for x in range(4)]
+```
+
+Then you can destructure
+```python
+months, days, years, players = inputti
+```
 
 ## Part 1: Learning to code by solving problems.
 
