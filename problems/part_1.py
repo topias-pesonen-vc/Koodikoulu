@@ -6,10 +6,21 @@ def spooky():
     spookers = n*"o"
     print(f"sp{spookers}ky")
 
-spooky()
+#spooky()
 
 
 # https://dmoj.ca/problem/wc15c2j1 - A New Hope
+def faraway():
+    n = int(input())
+    
+    far_string = " ".join(["far, "]*(n-1))
+    far_string = far_string + "far"
+
+    print(f"A long time ago in a galaxy {far_string} away...")
+
+faraway()
+
+
 
 # https://dmoj.ca/problem/ccc13j1 - Next in Line
 
