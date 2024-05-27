@@ -18,11 +18,22 @@ def faraway():
 
     print(f"A long time ago in a galaxy {far_string} away...")
 
-faraway()
-
-
+#faraway()
 
 # https://dmoj.ca/problem/ccc13j1 - Next in Line
+
+def age_diff():
+   f = int(input())
+   s = int(input())
+
+   diff = s - f 
+
+   print(s + diff)
+
+age_diff()
+
+
+
 
 # https://dmoj.ca/problem/wc17c1j2 - How's the Weather?
 
