@@ -79,10 +79,44 @@ def special_day():
     else:
         print("After")
 
-special_day()    
+#special_day()    
 
 # https://dmoj.ca/problem/ccc15j2 - Happy or Sad
+def happysad():
+    vastaus = input()
+
+    happys = vastaus.count(":-)")
+    sads = vastaus.count(":-(")
+
+    if happys == 0 and sads == 0:
+        print("none")
+    elif happys > sads:
+        print("happy")
+    elif happys == sads:
+        print("unsure")    
+    else:
+        print("sad")
+
+#happysad()
+
 # https://dmoj.ca/problem/dmopc16c1p0 - C.C. and Cheese-kun
+def satisfcation():
+    width = int(input())
+    percentage = int(input())
+
+    if width == 3 and percentage >= 95:
+        level = "absolutely"
+    elif width == 1 and percentage <= 50:
+        level = "fairly"
+    else:
+        level = "very"
+
+    print(f"C.C. is {level} satisfied with her pizza.")
+
+satisfcation()
+
+
+
 # https://dmoj.ca/problem/ccc07j1 - Who is in the Middle
 
 # https://dmoj.ca/problem/wc17c3j3 - Uncrackable
