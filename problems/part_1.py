@@ -113,11 +113,19 @@ def satisfcation():
 
     print(f"C.C. is {level} satisfied with her pizza.")
 
-satisfcation()
-
-
+#satisfcation()
 
 # https://dmoj.ca/problem/ccc07j1 - Who is in the Middle
+def middle():
+    one = int(input())
+    two = int(input())
+    tre = int(input())
+
+    lista = [one, two,tre]
+    lista.sort()
+
+    print(lista[1]) # middle value on three value list
+middle()
 
 # https://dmoj.ca/problem/wc17c3j3 - Uncrackable
 # https://dmoj.ca/problem/coci18c3p1 - Magnus
