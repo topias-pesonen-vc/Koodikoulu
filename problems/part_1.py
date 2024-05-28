@@ -66,8 +66,21 @@ def calories():
     de = int(input())
     print(f"Your total Calorie count is {burgers[b] + sides[s] + drinks[d] + desserts[de]}.")
 
-calories()
+#calories()
 # https://dmoj.ca/problem/ccc15j1 - Special Day
+def special_day():
+    first = int(input())
+    second = int(input())
+
+    if first == 1 or (first == 2 and second < 18):
+        print("Before")
+    elif first == 2 and second == 18:
+        print("Special")
+    else:
+        print("After")
+
+special_day()    
+
 # https://dmoj.ca/problem/ccc15j2 - Happy or Sad
 # https://dmoj.ca/problem/dmopc16c1p0 - C.C. and Cheese-kun
 # https://dmoj.ca/problem/ccc07j1 - Who is in the Middle
