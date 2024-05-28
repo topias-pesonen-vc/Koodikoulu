@@ -10,8 +10,9 @@ def spooky():
 # https://dmoj.ca/problem/wc15c2j1 - A New Hope
 def faraway():
     n = int(input())
-    far_string = " ".join(["far, "]*(n-1))
-    far_string = far_string + "far"
+    #far_string = " ".join(["far, "]*(n-1))
+    #far_string = far_string + "far"
+    far_string = ", ".join(["far"]*n)
 
     print(f"A long time ago in a galaxy {far_string} away...")
 #faraway()
@@ -50,10 +51,22 @@ def pokedollars():
     badge_profit = badges_crafted * D
 
     print(badge_profit + leftover_paint)
-pokedollars()
-
+#pokedollars()
 
 # https://dmoj.ca/problem/ccc06j1 - Canadian Calorie Counting
+def calories():
+    burgers = {1:461, 2: 431, 3:420, 4:0}
+    sides = {1:100, 2: 57, 3:70, 4:0}
+    drinks = {1:130, 2: 160, 3:118, 4:0}
+    desserts = {1:167, 2: 266, 3:75, 4:0}
+
+    b = int(input())
+    s = int(input())
+    d = int(input())
+    de = int(input())
+    print(f"Your total Calorie count is {burgers[b] + sides[s] + drinks[d] + desserts[de]}.")
+
+calories()
 # https://dmoj.ca/problem/ccc15j1 - Special Day
 # https://dmoj.ca/problem/ccc15j2 - Happy or Sad
 # https://dmoj.ca/problem/dmopc16c1p0 - C.C. and Cheese-kun
