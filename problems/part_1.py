@@ -125,9 +125,45 @@ def middle():
     lista.sort()
 
     print(lista[1]) # middle value on three value list
-middle()
+#middle()
 
 # https://dmoj.ca/problem/wc17c3j3 - Uncrackable
+def uncrackable():
+    # ASCII maps
+    # lowercase a-z 97-122
+    # uppercase a-z 65-90
+    # numbers 0-9 48-57
+
+    lowers = 0
+    uppers = 0
+    numbers = 0
+    while True:
+        password = input()
+        nchars = len(password)
+        # first test
+        if nchars < 8 or nchars > 12:
+            print("Invalid")
+            break
+        for byte in range(nchars):
+            x = ord(password[byte])
+
+            if x >= 48 and x <= 57:
+                numbers += 1
+            elif x >= 65 and x <= 90:
+                uppers += 1
+            elif x >= 97 and x <= 122:
+                lowers += 1
+            else:
+                continue
+        # second test
+        if lowers > 2 and uppers > 1 and numbers > 0:
+            print("Valid")
+            break
+        else:
+            print("Invalid")
+            break
+
+uncrackable()
 # https://dmoj.ca/problem/coci18c3p1 - Magnus
 # https://dmoj.ca/problem/ccc11s1 - English or French
 # https://dmoj.ca/problem/ccc11s2 - Multiple Choice
