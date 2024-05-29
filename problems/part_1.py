@@ -163,8 +163,47 @@ def uncrackable():
             print("Invalid")
             break
 
-uncrackable()
+#uncrackable()
 # https://dmoj.ca/problem/coci18c3p1 - Magnus
+def honi_exists(word):
+    index = 0
+    for char in word:
+        if char == "HONI"[index]:
+            index += 1
+            if index == len("HONI"):
+                return 1
+
+    return 0
+def count_honi(word):
+    # count "HONI" occurrence
+    index = 0
+    honicount = 0
+    for char in word:
+        if char == "HONI"[index]:
+            index += 1
+            if index == len("HONI"):
+                honicount += 1
+                index = 0
+                word = word[index+1:]
+
+    return honicount
+
+def honi(word):
+    # check if "HONI" exists at all 
+    is_honi_here = honi_exists(word)
+    if not is_honi_here:
+        return 0
+    
+    # strip unnecessary characters
+    word = ''.join([char for char in word if char in ['H','O','N','I']])
+    return count_honi(word)
+
+def aja_honi():
+    word = input()
+    print(honi(word))
+
+aja_honi()
+
 # https://dmoj.ca/problem/ccc11s1 - English or French
 # https://dmoj.ca/problem/ccc11s2 - Multiple Choice
 # https://dmoj.ca/problem/coci12c5p1 - Ljestvica
