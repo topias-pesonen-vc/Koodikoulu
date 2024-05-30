@@ -233,8 +233,34 @@ def multiple_check():
     n_oikeat = sum(1 for i in range(n) if vastaukset[i] == oikeat[i])
     print(n_oikeat)
     
-multiple_check()
+#multiple_check()
 # https://dmoj.ca/problem/coci12c5p1 - Ljestvica
+def extract_first_characters(s):
+    return [block[0] for block in s.split('|') if block]
+
+def Ljestvica():
+    a_tones = ["A","D","E"]
+    c_tones = ["C","F","G"]
+
+    inputti = input()
+    notes = extract_first_characters(inputti)
+
+    a_counter = sum(1 for char in notes if char in a_tones)
+    c_counter = sum(1 for char in notes if char in c_tones)
+
+    if a_counter == c_counter:
+        final = inputti[-1]
+    elif a_counter > c_counter:
+        final = 'A'
+    else:
+        final = 'C'
+
+    if final == "A":
+        print("A-mol")
+    else:
+        print("C-dur")
+
+Ljestvica()
 # https://dmoj.ca/problem/coci13c3p1 - Rijeci
 # https://dmoj.ca/problem/coci18c4p1 - Elder
 
