@@ -202,9 +202,28 @@ def aja_honi():
     word = input()
     print(honi(word))
 
-aja_honi()
+#aja_honi()
 
 # https://dmoj.ca/problem/ccc11s1 - English or French
+
+def englishfrench():
+    inputs = int(input())
+    inputit = [input() for _ in range(inputs)]
+    
+    teksti = ''.join(inputit)
+
+
+    en = sum(1 for char in teksti if char.lower() == 't')
+    fr = sum(1 for char in teksti if char.lower() == 's')
+    
+    if en > fr:
+        print("English")
+    else:
+        print("French")
+
+englishfrench()
+
+
 # https://dmoj.ca/problem/ccc11s2 - Multiple Choice
 # https://dmoj.ca/problem/coci12c5p1 - Ljestvica
 # https://dmoj.ca/problem/coci13c3p1 - Rijeci
