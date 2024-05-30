@@ -212,7 +212,6 @@ def englishfrench():
     
     teksti = ''.join(inputit)
 
-
     en = sum(1 for char in teksti if char.lower() == 't')
     fr = sum(1 for char in teksti if char.lower() == 's')
     
@@ -221,10 +220,20 @@ def englishfrench():
     else:
         print("French")
 
-englishfrench()
+#englishfrench()
 
 
 # https://dmoj.ca/problem/ccc11s2 - Multiple Choice
+def multiple_check():
+    n = int(input())
+    inputit = [input() for _ in range(2*n)]
+    vastaukset = inputit[:n]
+    oikeat = inputit[n:]
+
+    n_oikeat = sum(1 for i in range(n) if vastaukset[i] == oikeat[i])
+    print(n_oikeat)
+    
+multiple_check()
 # https://dmoj.ca/problem/coci12c5p1 - Ljestvica
 # https://dmoj.ca/problem/coci13c3p1 - Rijeci
 # https://dmoj.ca/problem/coci18c4p1 - Elder
