@@ -286,17 +286,15 @@ def elder():
     rounds = int(input())
     pelit = [input() for x in range(rounds)]
     hall_of_fame = [sauvamies]
-    i = 0
-    while i < rounds:
+
+    for i in range(rounds):
         voittaja = pelit[i][0]
         haviaja = pelit[i][-1] 
         if haviaja == sauvamies:
             sauvamies = voittaja
             if sauvamies not in hall_of_fame:
                 hall_of_fame.append(sauvamies)
-            
-        i += 1
-
+        
     print(sauvamies)
     print(len(hall_of_fame))
     
