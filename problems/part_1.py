@@ -298,9 +298,24 @@ def elder():
     print(sauvamies)
     print(len(hall_of_fame))
     
-elder()
+#elder()
 
 # https://dmoj.ca/problem/ccc20j2 - Epidemiology
+def spread():
+    inputit = [int(input()) for _ in range(3)]
+    p, n , r = inputit
+    total = n
+    day = 0
+    while total <= p:
+        n = (n*r)
+         
+        total += n
+        #print(f'After day {day} infected {total}')
+        day += 1
+        
+    print(day)        
+spread()
+
 # https://dmoj.ca/problem/coci08c1p2 - Ptice
 # https://dmoj.ca/problem/ccc02j2 - AmeriCanadian
 # https://dmoj.ca/problem/ecoo13r1p1 - Take a Number
