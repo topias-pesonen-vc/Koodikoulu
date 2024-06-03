@@ -279,8 +279,28 @@ def rijeci():
     a,b = fibonacci_counts(k)
     print(a,b)
 
-rijeci()
+#rijeci()
 # https://dmoj.ca/problem/coci18c4p1 - Elder
+def elder():
+    sauvamies = input()
+    rounds = int(input())
+    pelit = [input() for x in range(rounds)]
+    hall_of_fame = [sauvamies]
+    i = 0
+    while i < rounds:
+        voittaja = pelit[i][0]
+        haviaja = pelit[i][-1] 
+        if haviaja == sauvamies:
+            sauvamies = voittaja
+            if sauvamies not in hall_of_fame:
+                hall_of_fame.append(sauvamies)
+            
+        i += 1
+
+    print(sauvamies)
+    print(len(hall_of_fame))
+    
+elder()
 
 # https://dmoj.ca/problem/ccc20j2 - Epidemiology
 # https://dmoj.ca/problem/coci08c1p2 - Ptice
