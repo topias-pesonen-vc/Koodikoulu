@@ -260,8 +260,26 @@ def Ljestvica():
     else:
         print("C-dur")
 
-Ljestvica()
+#Ljestvica()
 # https://dmoj.ca/problem/coci13c3p1 - Rijeci
+
+def fibonacci_counts(k):
+    fib = [(1,0),(0,1)]
+
+    for i in range(2,k+1):
+        # A on edellisten kahden A:n summa
+        # B on edellisten kahden B:n summa
+        new_a = fib[i-1][0] + fib[i-2][0]  
+        new_b = fib[i-1][1] + fib[i-2][1]  
+
+        fib.append((new_a, new_b))
+    return fib[k]
+def rijeci():
+    k = int(input())
+    a,b = fibonacci_counts(k)
+    print(a,b)
+
+rijeci()
 # https://dmoj.ca/problem/coci18c4p1 - Elder
 
 # https://dmoj.ca/problem/ccc20j2 - Epidemiology
