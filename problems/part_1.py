@@ -308,15 +308,37 @@ def spread():
     day = 0
     while total <= p:
         n = (n*r)
-         
         total += n
         #print(f'After day {day} infected {total}')
         day += 1
         
     print(day)        
-spread()
+#spread()
 
 # https://dmoj.ca/problem/coci08c1p2 - Ptice
+
+def ext_seq(s, n):
+    return s * (n // len(s)) + s[:n % len(s)]
+
+def diff_letters(a,b):
+    return sum ( a[i] == b[i] for i in range(len(a)) )
+
+def ptice():
+    n = int(input())
+    answers = input()
+
+    seqs = [ext_seq(s, n) for s in ["ABC", "BABC", "CCAABB"]]
+    corrects = [diff_letters(s, answers) for s in seqs]
+
+    keys = ["Adrian", "Bruno","Goran"]
+    results = dict(zip(keys, corrects))
+    most_corrects = max(results.values())
+    print(most_corrects)
+    max_keys = [k for k, v in results.items() if v == most_corrects]
+
+    for key in max_keys:
+        print(key)
+ptice()
 # https://dmoj.ca/problem/ccc02j2 - AmeriCanadian
 # https://dmoj.ca/problem/ecoo13r1p1 - Take a Number
 # https://dmoj.ca/problem/ecoo15r1p1 - When You Eat Your Smarties
