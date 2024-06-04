@@ -338,8 +338,29 @@ def ptice():
 
     for key in max_keys:
         print(key)
-ptice()
+#ptice()
 # https://dmoj.ca/problem/ccc02j2 - AmeriCanadian
+def check_input(s):
+    if len(s) > 3 and s[-3] in "bcdfghjklmnpqrstvwxz" and s[-2:] == "or":
+        return s[:-1] + "u" + s[-1:]
+    else:
+        return s
+
+def americanadian():
+    inputti = input()
+    inputit = []
+    while True:
+        if inputti == "quit!":
+            break
+        else:
+            inputit.append(inputti)
+            inputti = input()
+
+    fixed_inputs = [check_input(s) for s in inputit]
+    for i in fixed_inputs:
+        print(i)
+
+americanadian()
 # https://dmoj.ca/problem/ecoo13r1p1 - Take a Number
 # https://dmoj.ca/problem/ecoo15r1p1 - When You Eat Your Smarties
 # https://dmoj.ca/problem/ccc19j3 - Cold Compress
