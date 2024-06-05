@@ -360,8 +360,37 @@ def americanadian():
     for i in fixed_inputs:
         print(i)
 
-americanadian()
+#americanadian()
 # https://dmoj.ca/problem/ecoo13r1p1 - Take a Number
+def docalculations(inputit,num):
+    takes = inputit.count("TAKE")
+    serves = inputit.count("SERVE")
+    not_served = takes - serves
+
+    num = (num + takes - 1) % 999 + 1
+    print(f"{takes} {not_served} {num}")
+
+    return num
+
+def takenumber():
+    num = int(input())
+    
+    inputti = input()
+    inputit = []
+    while True:
+        if inputti == "EOF":
+            break
+        if inputti == "CLOSE":
+            
+            num = docalculations(inputit,num)
+            inputit = [] # reset the list
+            inputti = input()
+
+        else:
+            inputit.append(inputti)
+            inputti = input()
+
+takenumber()
 # https://dmoj.ca/problem/ecoo15r1p1 - When You Eat Your Smarties
 # https://dmoj.ca/problem/ccc19j3 - Cold Compress
 
