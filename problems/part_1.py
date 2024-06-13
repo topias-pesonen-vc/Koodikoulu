@@ -390,8 +390,108 @@ def takenumber():
             inputit.append(inputti)
             inputti = input()
 
-takenumber()
+#takenumber()
+
 # https://dmoj.ca/problem/ecoo15r1p1 - When You Eat Your Smarties
+def eat_candies(candict):
+    timer = 0
+    for k in candict.keys():
+        if candict[k] == 0:
+            continue
+        if k == "red":
+            timer += 16 * candict[k]
+        else:
+            handfuls = (candict[k] + 6) // 7
+            timer += 13 * handfuls
+    return timer
+
+def smarties(inputtilista):
+    for inputit in inputtilista:
+        candict = {
+            
+            "orange":0,
+            "blue":0,
+            "green":0,
+            "yellow":0,
+            "pink":0,
+            "violet":0,
+            "brown":0,
+            "red":0
+        }
+        for i in inputit:
+            if i != "end of box":
+                candict[i] += 1
+
+        print(eat_candies(candict))
+
+inputit = ["red",
+"brown",
+"brown",
+"violet",
+"blue",
+"pink",
+"blue",
+"blue",
+"pink",
+"brown",
+"yellow",
+"brown",
+"pink",
+"violet",
+"green",
+"yellow",
+"red",
+"orange",
+"orange",
+"blue",
+"brown",
+"pink",
+"red",
+"red",
+"red",
+"brown",
+"orange",
+"orange",
+"green",
+"red",
+"orange",
+"violet",
+"blue",
+"pink",
+"yellow",
+"pink",
+"brown",
+"orange",
+"green",
+"red",
+"blue",
+"yellow",
+"green",
+"orange",
+"brown",
+"orange",
+"pink",
+"violet",
+"brown",
+"red",
+"end of box"]
+inputtilista = [[]]
+for i in range(10):
+    inputti = input()
+    while True:
+        if inputti == "end of box":
+            if inputtilista[-1]:  # Only append a new list if the last one isn't empty
+                inputtilista.append([])
+            break
+        else:
+            inputtilista[-1].append(inputti)
+        
+        inputti = input()
+
+# Remove the last empty list if it exists
+if not inputtilista[-1]:
+    inputtilista.pop()
+smarties(inputtilista)
 # https://dmoj.ca/problem/ccc19j3 - Cold Compress
 
 # https://dmoj.ca/problem/ccc07j3 - Deal or No Deal Calculator
