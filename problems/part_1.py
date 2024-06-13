@@ -424,75 +424,47 @@ def smarties(inputtilista):
 
         print(eat_candies(candict))
 
-inputit = ["red",
-"brown",
-"brown",
-"violet",
-"blue",
-"pink",
-"blue",
-"blue",
-"pink",
-"brown",
-"yellow",
-"brown",
-"pink",
-"violet",
-"green",
-"yellow",
-"red",
-"orange",
-"orange",
-"blue",
-"brown",
-"pink",
-"red",
-"red",
-"red",
-"brown",
-"orange",
-"orange",
-"green",
-"red",
-"orange",
-"violet",
-"blue",
-"pink",
-"yellow",
-"pink",
-"brown",
-"orange",
-"green",
-"red",
-"blue",
-"yellow",
-"green",
-"orange",
-"brown",
-"orange",
-"pink",
-"violet",
-"brown",
-"red",
-"end of box"]
-inputtilista = [[]]
-for i in range(10):
-    inputti = input()
-    while True:
-        if inputti == "end of box":
-            if inputtilista[-1]:  # Only append a new list if the last one isn't empty
-                inputtilista.append([])
-            break
-        else:
-            inputtilista[-1].append(inputti)
-        
-        inputti = input()
-
-# Remove the last empty list if it exists
-if not inputtilista[-1]:
-    inputtilista.pop()
-smarties(inputtilista)
+#inputtilista = [[]]
+#for i in range(10):#
+#    inputti = input()
+#    while True:
+#        if inputti == "end of box":
+#            if inputtilista[-1]:  # Only append a new list if the last one isn't empty
+#                inputtilista.append([])
+#            break
+#        else:
+#            inputtilista[-1].append(inputti)
+#        
+#        inputti = input()
+##
+### Remove the last empty list if it exists
+##if not inputtilista[-1]:#
+#    inputtilista.pop()
+#smarties(inputtilista)
 # https://dmoj.ca/problem/ccc19j3 - Cold Compress
+def count_consecutive(lista):
+    result = []
+    cur = lista[0]
+    count = 1
+    for c in lista[1:]:
+        if c == cur:
+            count += 1
+        else:
+            result.append((cur, count))
+            cur = c
+            count = 1
+    result.append((cur, count))
+    return result
+
+def runlengthencoding():
+    n = int(input())
+    inputit = [input() for _ in range(n)]
+    for inputti in inputit:
+        result = count_consecutive(list(inputti))
+        output = " ".join([f"{count} {element}" for element, count in result])
+        print(output)
+
+runlengthencoding()
 
 # https://dmoj.ca/problem/ccc07j3 - Deal or No Deal Calculator
 # https://dmoj.ca/problem/coci17c1p1 - Cezar
