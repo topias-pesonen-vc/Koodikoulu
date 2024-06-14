@@ -464,9 +464,36 @@ def runlengthencoding():
         output = " ".join([f"{count} {element}" for element, count in result])
         print(output)
 
-runlengthencoding()
+#runlengthencoding()
 
 # https://dmoj.ca/problem/ccc07j3 - Deal or No Deal Calculator
+def dealornodeal():
+    dolars = {
+        1: 100,
+        2: 500,
+        3: 1000,
+        4: 5000,
+        5: 10000,
+        6: 25000,
+        7: 50000,
+        8: 100000,
+        9: 500000,
+        10:1000000
+    }
+    total = sum(dolars.values())
+    n = int(input())
+    opened = [int(input()) for _ in range(n)]
+    offer = int(input())
+
+    total -= sum(dolars[i] for i in opened)
+    
+    avg = total / (10 - n) 
+    if offer > avg:
+        print("deal")
+    else:
+        print("no deal")
+
+dealornodeal()
 # https://dmoj.ca/problem/coci17c1p1 - Cezar
 # https://dmoj.ca/problem/coci18c2p1 - Preokret
 # https://dmoj.ca/problem/ccc00s2 - Babbling Brooks
