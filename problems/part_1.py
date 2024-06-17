@@ -486,15 +486,47 @@ def dealornodeal():
     offer = int(input())
 
     total -= sum(dolars[i] for i in opened)
-    
+
     avg = total / (10 - n) 
     if offer > avg:
         print("deal")
     else:
         print("no deal")
 
-dealornodeal()
+#dealornodeal()
 # https://dmoj.ca/problem/coci17c1p1 - Cezar
+def cezar():
+    cards = {
+        2:4,
+        3:4,
+        4:4,
+        5:4,
+        6:4,
+        7:4,
+        8:4,
+        9:4,
+        10:16,
+        11:4
+    }
+    n = int(input())
+    inputit = [int(input()) for _ in range(n)]
+
+    diff = 21 - sum(inputit)
+    if diff >= 11:
+        print("VUCI")
+    else:
+        for i in inputit:
+            cards[i] -= 1
+        greater = sum(value for key, value in cards.items() if key > diff)
+        lesser = sum(value for key, value in cards.items() if key <= diff)
+        
+        if greater >= lesser:
+            print("DOSTA")
+        else:
+            print("VUCI")
+
+cezar()
+
 # https://dmoj.ca/problem/coci18c2p1 - Preokret
 # https://dmoj.ca/problem/ccc00s2 - Babbling Brooks
 # https://dmoj.ca/problem/ecoo18r1p1 - Willow's Wild Ride
