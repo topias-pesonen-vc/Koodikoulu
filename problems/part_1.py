@@ -525,9 +525,49 @@ def cezar():
         else:
             print("VUCI")
 
-cezar()
+#cezar()
 
 # https://dmoj.ca/problem/coci18c2p1 - Preokret
+def preokret():
+    team_a_points = int(input())
+    a_inputit = [int(input()) for _ in range(team_a_points)]
+
+    team_b_points = int(input())
+    b_inputit = [int(input()) for _ in range(team_b_points)]
+
+    first_h_s = 60*2*12
+    
+    counta = sum(1 for x in a_inputit if x <= first_h_s)
+    countb = sum(1 for x in b_inputit if x <= first_h_s)
+    print(counta+countb)
+
+    merged_times = [(time, 'A') for time in a_inputit] + [(time, 'B') for time in b_inputit]
+    merged_times.sort()
+
+    score_a, score_b = 0, 0
+    current_leader = None
+    lead_changes = 0
+    for time, team in merged_times:
+        if team == 'A':
+            score_a += 1
+        else:
+            score_b += 1
+        if score_a > score_b:
+            new_leader = 'A'
+        elif score_b > score_a:
+            new_leader = 'B'
+        else:
+            new_leader = None # Tie
+
+        # Check if the leader has changed
+        if new_leader != current_leader and new_leader is not None:
+            lead_changes += 1
+            current_leader = new_leader
+            
+    print(lead_changes - 1) # subtract the first change
+
+#preokret()
+
 # https://dmoj.ca/problem/ccc00s2 - Babbling Brooks
 # https://dmoj.ca/problem/ecoo18r1p1 - Willow's Wild Ride
 # https://dmoj.ca/problem/ecoo19r1p1 - Free Shirts
